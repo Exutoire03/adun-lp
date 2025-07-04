@@ -13,7 +13,7 @@ export default function Home() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-xl"
+          className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight drop-shadow-xl"
         >
           Manger sainement,<br /> avec les saveurs de chez nous.
         </motion.h1>
@@ -31,7 +31,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
-          className="flex gap-4 z-10"
+          className="flex flex-col md:flex-row gap-4 z-10 justify-center items-center"
         >
           <a
             href="https://play.google.com/store"
@@ -165,7 +165,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
-          className="flex gap-4 z-10 justify-center items-center"
+          className="flex flex-col md:flex-row gap-4 z-10 justify-center items-center"
         >
           <a
             href="https://play.google.com/store"
