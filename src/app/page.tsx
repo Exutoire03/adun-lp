@@ -1,12 +1,14 @@
 "use client";
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
     <div className="bg-[#FFF8E7] text-gray-900">
-      {/* Hero Section */}
+      
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 py-20 bg-gradient-to-br from-[#C0392B] via-[#D35400] to-[#F39C12] text-white relative overflow-hidden">
+       
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -15,32 +17,64 @@ export default function Home() {
         >
           Manger sainement,<br /> avec les saveurs de chez nous.
         </motion.h1>
+
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
           className="text-lg md:text-2xl mb-10 max-w-xl"
         >
-          Adun est l’application de nutrition africaine qui t’aide à mieux manger, à partir de ce que tu as chez toi.
+          Adun est l&apos;application de nutrition africaine qui t&apos;aide à mieux manger, à partir de ce que tu as chez toi.
         </motion.p>
+
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
-          className="flex gap-4"
+          className="flex gap-4 z-10"
         >
-          <a href="#download" className="bg-white text-[#C0392B] font-semibold px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition transform">Télécharger l’app</a>
-          <a href="#features" className="border border-white px-6 py-3 rounded-xl hover:bg-white hover:text-[#C0392B] transition transform hover:scale-105">En savoir plus</a>
+          <a
+            href="https://play.google.com/store"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Télécharger sur Google Play"
+            className="group"
+          >
+            <div className="relative w-48 h-20 transform transition duration-300 group-hover:scale-105 group-hover:shadow-xl">
+              <Image
+                src="/android3.png"
+                alt="Google Play"
+                fill
+                className="object-contain cursor-pointer"
+              />
+            </div>
+          </a>
+          <a
+            href="https://www.apple.com/fr/app-store/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Télécharger sur l'App Store"
+            className="group"
+          >
+            <div className="relative w-48 h-20 transform transition duration-300 group-hover:scale-105 group-hover:shadow-xl">
+              <Image
+                src="/ios.png"
+                alt="App Store"
+                fill
+                className="object-contain cursor-pointer"
+              />
+            </div>
+          </a>
         </motion.div>
 
-        {/* Decorative Floating Bubbles */}
+
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <motion.div animate={{ y: [-20, 20, -20] }} transition={{ duration: 10, repeat: Infinity }} className="absolute top-10 left-10 w-20 h-20 bg-[#F39C12] opacity-20 rounded-full blur-2xl"></motion.div>
           <motion.div animate={{ y: [30, -30, 30] }} transition={{ duration: 12, repeat: Infinity }} className="absolute bottom-10 right-20 w-28 h-28 bg-[#D35400] opacity-10 rounded-full blur-2xl"></motion.div>
         </div>
       </section>
 
-      {/* About Section */}
+      
       <section className="py-24 px-6 text-center bg-[#FFF8E7] relative">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -58,11 +92,11 @@ export default function Home() {
           transition={{ delay: 0.2 }}
           className="max-w-3xl mx-auto text-lg text-gray-700"
         >
-          Parce que l’alimentation saine peut aussi rimer avec tradition, goût, et proximité. Adun valorise les recettes africaines, les ingrédients locaux, et te guide vers une meilleure santé de façon simple et intuitive.
+          Parce que l&apos;alimentation saine peut aussi rimer avec tradition, goût, et proximité. Adun valorise les recettes africaines, les ingrédients locaux, et te guide vers une meilleure santé de façon simple et intuitive.
         </motion.p>
       </section>
 
-      {/* Features Section */}
+      
       <section id="features" className="py-24 bg-[#FCEFD8] px-6">
         <motion.h2
           initial={{ opacity: 0, scale: 0.9 }}
@@ -79,7 +113,7 @@ export default function Home() {
             color: '#C0392B',
             desc: 'Entre tes ingrédients disponibles, et découvre les plats africains que tu peux cuisiner !'
           }, {
-            title: '🧮 Calcul de l’IMC',
+            title: '🧮 Calcul de l&apos;IMC',
             color: '#145A32',
             desc: 'Évalue ton indice de masse corporelle et reçois des conseils adaptés à ton profil.'
           }, {
@@ -89,7 +123,7 @@ export default function Home() {
           }, {
             title: '🎮 Jeu nutritionnel',
             color: '#D35400',
-            desc: 'Apprends en t’amusant grâce à des quiz ludiques sur la nutrition africaine.'
+            desc: 'Apprends en t&apos;amusant grâce à des quiz ludiques sur la nutrition africaine.'
           }].map((feat, i) => (
             <motion.div
               key={i}
@@ -106,7 +140,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Call to Action Section */}
+      
       <section id="download" className="py-24 px-6 bg-[#C0392B] text-white text-center relative overflow-hidden">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -124,16 +158,49 @@ export default function Home() {
           transition={{ delay: 0.3 }}
           className="mb-10"
         >
-          Télécharge gratuitement l’app et redécouvre la saveur du bien-être.
+          Télécharge gratuitement l&apos;app et redécouvre la saveur du bien-être.
         </motion.p>
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          href="#"
-          className="bg-white text-[#C0392B] font-semibold px-8 py-4 rounded-xl shadow-xl inline-block"
+        
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1, duration: 0.5 }}
+          className="flex gap-4 z-10 justify-center items-center"
         >
-          📱 Télécharger l’application
-        </motion.a>
+          <a
+            href="https://play.google.com/store"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Télécharger sur Google Play"
+            className="group"
+          >
+            <div className="relative w-48 h-20 transform transition duration-300 group-hover:scale-105 group-hover:shadow-xl">
+              <Image
+                src="/android3.png"
+                alt="Google Play"
+                fill
+                className="object-contain cursor-pointer"
+              />
+            </div>
+          </a>
+          <a
+            href="https://www.apple.com/fr/app-store/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Télécharger sur l'App Store"
+            className="group"
+          >
+            <div className="relative w-48 h-20 transform transition duration-300 group-hover:scale-105 group-hover:shadow-xl">
+              <Image
+                src="/ios.png"
+                alt="App Store"
+                fill
+                className="object-contain cursor-pointer"
+              />
+            </div>
+          </a>
+        </motion.div>
+
         <div className="absolute bottom-0 left-0 w-full h-24 bg-[#FFF8E7] skew-y-[-3deg] z-0"></div>
       </section>
 
